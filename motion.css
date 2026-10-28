@@ -1,0 +1,111 @@
+/* Visual blocks unfold with the reader; the header has no reading indicator. */
+:root{--ease:cubic-bezier(.22,.61,.36,1)}
+html{scroll-behavior:auto}
+.hero-copy,.hero-copy>*,.hero-note{animation:none}
+.motion-fragment{display:inline-block;vertical-align:baseline}
+.motion-fragment[data-space]{margin-inline-end:.18em}
+.hero h1,.section-heading h2,.about-copy h2,.aside-content>h3{ text-wrap:wrap }
+.motion-fragment{ text-wrap:wrap }
+.hero h1 .motion-fragment{white-space:nowrap}
+/* Keyboard focus always stays readable, even near the start of a scroll range. */
+[data-scroll-layer]:focus-within,[data-scroll-subject]:focus-within [data-scroll-layer]{opacity:1!important;translate:0 0!important;clip-path:none!important}
+/* Clipping must not create a non-scrolling ancestor for view timelines. */
+.service-card,.panel-photo,.space-gallery figure,.visit-card,.booking-aside{overflow:clip}
+.hero-image{transform-origin:70% 50%;animation:space-breath 22s ease-in-out infinite alternate;animation-play-state:paused}
+html[data-hero-motion=on] .hero-image{animation-play-state:running}
+.brand-ribbon{animation:ribbon-enter 1.6s var(--ease) .12s backwards}
+.hero-utilities{position:absolute;right:24px;bottom:12px;display:flex;align-items:center;gap:10px;z-index:1}
+.motion-toggle{display:inline-flex;align-items:center;gap:7px;min-height:32px;padding:5px 10px;border:1px solid var(--line);border-radius:4px;background:rgb(255 255 255/.93);font-size:9px;line-height:1.5}
+.motion-toggle:disabled{opacity:1;cursor:default}
+.motion-status{width:8px;height:10px;background:linear-gradient(90deg,currentColor 0 30%,transparent 30% 65%,currentColor 65%);color:var(--body)}
+.motion-toggle[aria-pressed=true] .motion-status{background:currentColor;clip-path:polygon(0 0,100% 50%,0 100%)}
+.locale{border:1px solid var(--line);border-radius:5px;background:white;min-height:38px;padding:7px 9px;white-space:nowrap;font-weight:600;transition:background .2s,border-color .2s}
+.locale:hover{background:var(--brand-soft);border-color:var(--brand)}
+.button{position:relative;overflow:hidden;transition:background .2s,color .2s,transform .3s var(--ease),box-shadow .3s}
+.button.primary:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgb(8 102 232/.18)}
+.button:active{transform:translateY(0) scale(.98)}
+.button .icon{transition:transform .3s var(--ease)}
+.button:hover .icon{transform:translateX(4px)}
+.nav-book:hover .icon{transform:translate(2px,-2px)}
+.service-grid{perspective:1400px}
+.service-card{transition:transform .65s var(--ease),border-color .3s,box-shadow .45s;transform-style:preserve-3d}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 6px 8px rgb(24 35 61/.08)}
+.service-photo{isolation:isolate}
+.service-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 20%,rgb(255 255 255/.25) 45%,transparent 65%);transform:translateX(-130%);pointer-events:none;transition:transform .85s var(--ease)}
+.service-card:hover .service-photo:after{transform:translateX(130%)}
+.service-category{transition:color .3s}.service-card:hover .service-category{color:var(--brand)}
+.space-gallery figure img{scale:1.07;transition:scale 1.1s var(--ease)}
+.space-gallery figure:hover img{scale:1.095}
+.interest-option{transition:background .25s,border-color .25s,transform .25s var(--ease)}
+.interest-option:has(input:checked){transform:translateX(3px)}
+.radio-indicator{transition:border-width .2s,border-color .2s}
+.time-grid span{transition:background .2s,border-color .2s,transform .2s}
+.time-grid input:checked+span{transform:translateY(-2px)}
+.stepper{position:relative;padding-bottom:12px}
+.stepper:before,.stepper:after{content:'';position:absolute;bottom:0;left:0;height:2px;border-radius:2px;pointer-events:none}
+.stepper:before{right:0;background:var(--line)}
+.stepper:after{width:var(--step-progress,0%);background:var(--brand);transition:width .5s var(--ease)}
+.stepper li>span{transition:background .3s,color .3s,box-shadow .3s}
+.stepper li.active>span{box-shadow:0 0 0 4px var(--brand-soft)}
+form[aria-busy=true] #booking-submit:after{content:'';width:14px;height:14px;border:2px solid rgb(255 255 255/.4);border-top-color:white;border-radius:50%;animation:submitting-spin .7s linear infinite}
+.success-icon{box-shadow:0 0 0 7px oklch(97% .018 167)}
+.site-dialog[open]{animation:dialog-arrive .45s var(--ease)}
+.site-dialog::backdrop{background:rgb(17 28 50/.33);backdrop-filter:blur(5px);animation:backdrop-arrive .3s ease-out}
+.mobile-nav:not([hidden]){animation:copy-arrive .3s var(--ease)}
+@supports (animation-timeline:view()){
+  .hero{view-timeline-name:--hero-space;view-timeline-axis:block}
+  .hero-inner{animation:hero-copy-drift linear both;animation-timeline:--hero-space;animation-range:exit 0% exit 100%}
+  .hero-image{animation:space-breath 22s ease-in-out infinite alternate,hero-camera-drift linear both;animation-timeline:auto,--hero-space;animation-range:normal,exit 0% exit 100%;animation-play-state:paused,running}
+  html[data-hero-motion=on] .hero-image{animation-play-state:running,running}
+  @media(min-width:961px){
+    .space-gallery{view-timeline-name:--gallery-space;view-timeline-axis:block}
+    .gallery-main img,.gallery-detail img{animation:gallery-depth linear both;animation-timeline:--gallery-space;animation-range:entry 0% exit 100%}
+    .gallery-detail img{animation-name:gallery-depth-counter}
+  }
+}
+@supports (interpolate-size:allow-keywords){
+  .faq details{interpolate-size:allow-keywords}
+  .faq details::details-content{height:0;opacity:0;overflow:clip;transition:height .35s var(--ease),opacity .25s,content-visibility .35s allow-discrete}
+  .faq details[open]::details-content{height:auto;opacity:1}
+}
+html[lang=zh-CN]{--display:'Noto Serif SC','Songti SC',SimSun,serif;--sans:'Manrope','Microsoft YaHei','PingFang SC',sans-serif}
+html[lang=zh-CN] h1,html[lang=zh-CN] h2,html[lang=zh-CN] h3{font-weight:500;letter-spacing:.015em}
+html[lang=zh-CN] em{font-style:normal;color:var(--ink)}
+html[lang=zh-CN] .hero h1{font-size:clamp(42px,4.2vw,62px);line-height:1.37}
+html[lang=zh-CN] .hero-kicker{letter-spacing:.25em;font-size:10px;margin-bottom:17px}
+html[lang=zh-CN] .hero-description{line-height:2.1;font-size:13px}
+html[lang=zh-CN] .hero-facts>div{font-size:11px}
+html[lang=zh-CN] .section-heading h2{font-size:clamp(29px,2.8vw,39px);line-height:1.5}
+html[lang=zh-CN] .about-copy h2{font-size:38px;line-height:1.5}
+html[lang=zh-CN] .service-body h3{font-size:25px}
+html[lang=zh-CN] .booking-step h3{font-size:25px;line-height:1.5}
+html[lang=zh-CN] .aside-content>h3{font-size:28px;line-height:1.65}
+html[lang=zh-CN] .brand-word{font-family:'Bodoni Moda',Georgia,serif}
+html[lang=zh-CN] .brand-word>span{font-size:9px;letter-spacing:.15em}
+@keyframes space-breath{from{transform:scale(1)}to{transform:scale(1.045) translateX(-.4%)}}
+@keyframes copy-arrive{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes dialog-arrive{from{opacity:.35;transform:translateY(12px) scale(.99)}to{opacity:1;transform:none}}
+@keyframes backdrop-arrive{from{opacity:0}to{opacity:1}}
+@keyframes submitting-spin{to{transform:rotate(360deg)}}
+@keyframes hero-copy-drift{from{translate:0 0}to{translate:0 -24px}}
+@keyframes hero-camera-drift{from{translate:0 0}to{translate:0 42px}}
+@keyframes gallery-depth{from{translate:0 9px}to{translate:0 -9px}}
+@keyframes gallery-depth-counter{from{translate:0 -7px}to{translate:0 7px}}
+@media(max-width:700px){
+  .locale{display:flex;padding:7px;min-width:44px;min-height:38px;justify-content:center;font-size:10px}.locale .icon{display:none}
+  .nav-actions{gap:5px}.nav-book{padding-inline:10px;font-size:9px}
+  .hero-utilities{right:18px;bottom:10px;gap:6px}.hero-utilities .image-disclosure{font-size:8px}.motion-toggle{font-size:8px;min-height:32px;padding-inline:8px}
+  html[lang=zh-CN] .hero h1{font-size:clamp(37px,9vw,52px);line-height:1.45}
+  html[lang=zh-CN] .hero-description{font-size:12px;margin-top:16px}
+  html[lang=zh-CN] .hero-facts>div{font-size:9px}
+  html[lang=zh-CN] .hero-buttons{margin-top:21px}
+  html[lang=zh-CN] .section-heading h2 em{display:block}
+  html[lang=zh-CN] .about-copy h2{font-size:32px}
+  html[lang=zh-CN] .booking-step h3{font-size:23px}
+}
+@media(max-width:370px){.nav-book{display:none}.hero h1{font-size:36px}.hero-utilities{right:14px}.hero-utilities .image-disclosure{font-size:7px}}
+html[data-motion=off] *,html[data-motion=off] *:before,html[data-motion=off] *:after{animation:none!important;transition:none!important}
+html[data-motion=off]{scroll-behavior:auto}
+/* Pause the architectural camera at its current frame, without a zoom jump. */
+html[data-motion=off] .hero-image{animation:space-breath 22s ease-in-out infinite alternate!important;animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){html[data-motion=off] .hero-image{animation:none!important;transform:none}}

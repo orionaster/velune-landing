@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Vélune is a fictional aesthetic brand created as a personal portfolio concept. Explore the bilingual website and interactive booking demo.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Vélune">
+  <meta property="og:title" content="Vélune | Beauty at Your Own Pace">
+  <meta property="og:description" content="A fictional aesthetic atelier. An independent bilingual brand and booking experience.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Vélune | Beauty at Your Own Pace</title>
+  <link rel="icon" href="assets/velune-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/atelier-salon.webp" as="image" media="(min-width:761px)">
+  <link rel="preload" href="assets/conversation-room.webp" as="image" media="(max-width:760px)">
+  <link rel="stylesheet" href="assets/fonts.css?v=1.1.0">
+  <link rel="stylesheet" href="styles.css?v=1.1.0">
+  <link rel="stylesheet" href="motion.css?v=1.1.0">
+  <link rel="stylesheet" href="finish.css?v=1.1.0">
+  <script src="i18n.js?v=1.1.0" defer></script>
+  <script src="motion.js?v=1.1.0" defer></script>
+  <script src="booking-utils.js?v=1.1.0" defer></script>
+  <script src="app.js?v=1.1.0" defer></script>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="0" height="0" focusable="false" style="position:absolute;overflow:hidden"><symbol id="arrow-right" viewBox="0 0 24 24">
+  <path d="M5 12l14 0" />
+  <path d="M13 18l6 -6" />
+  <path d="M13 6l6 6" />
+</symbol><symbol id="arrow-up-right" viewBox="0 0 24 24">
+  <path d="M17 7l-10 10" />
+  <path d="M8 7l9 0l0 9" />
+</symbol><symbol id="map-pin" viewBox="0 0 24 24">
+  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" />
+</symbol><symbol id="world" viewBox="0 0 24 24">
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M3.6 9h16.8" />
+  <path d="M3.6 15h16.8" />
+  <path d="M11.5 3a17 17 0 0 0 0 18" />
+  <path d="M12.5 3a17 17 0 0 1 0 18" />
+</symbol><symbol id="calendar-event" viewBox="0 0 24 24">
+  <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" />
+  <path d="M16 3l0 4" />
+  <path d="M8 3l0 4" />
+  <path d="M4 11l16 0" />
+  <path d="M8 15h2v2h-2l0 -2" />
+</symbol><symbol id="check" viewBox="0 0 24 24">
+  <path d="M5 12l5 5l10 -10" />
+</symbol><symbol id="chevron-down" viewBox="0 0 24 24">
+  <path d="M6 9l6 6l6 -6" />
+</symbol><symbol id="chevron-left" viewBox="0 0 24 24">
+  <path d="M15 6l-6 6l6 6" />
+</symbol><symbol id="menu-2" viewBox="0 0 24 24">
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</symbol><symbol id="x" viewBox="0 0 24 24">
+  <path d="M18 6l-12 12" />
+  <path d="M6 6l12 12" />
+</symbol><symbol id="mail" viewBox="0 0 24 24">
+  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+  <path d="M3 7l9 6l9 -6" />
+</symbol><symbol id="shield-check" viewBox="0 0 24 24">
+  <path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" />
+  <path d="M15 19l2 2l4 -4" />
+</symbol><symbol id="heart-handshake" viewBox="0 0 24 24">
+  <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+  <path d="M12 6l-3.293 3.293a1 1 0 0 0 0 1.414l.543 .543c.69 .69 1.81 .69 2.5 0l1 -1a3.182 3.182 0 0 1 4.5 0l2.25 2.25" />
+  <path d="M12.5 15.5l2 2" />
+  <path d="M15 13l2 2" />
+</symbol><symbol id="sparkles" viewBox="0 0 24 24">
+  <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" />
+</symbol><symbol id="user" viewBox="0 0 24 24">
+  <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</symbol><symbol id="info-circle" viewBox="0 0 24 24">
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</symbol><symbol id="clock" viewBox="0 0 24 24">
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 7v5l3 3" />
+</symbol><symbol id="circle-check" viewBox="0 0 24 24">
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+  <path d="M9 12l2 2l4 -4" />
+</symbol></svg>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a href="#home" class="brand" aria-label="Vélune home"><span class="brand-symbol" aria-hidden="true"></span><span class="brand-word">Vélune<span>AESTHETIC ATELIER</span></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#home" class="is-active">Home</a><a href="#consultations">Consultations</a><a href="#about">About Vélune</a><a href="#visit">Visit & FAQ</a>
+      </nav>
+      <div class="nav-actions"><button type="button" class="preview-tag" data-open-concept>Fictional brand concept</button><a class="button primary nav-book" href="#booking">Book a consultation <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a><button class="locale" id="language-toggle" type="button" aria-label="Switch to Chinese"><svg class="icon" aria-hidden="true"><use href="#world"/></svg><span data-no-translate>中文</span></button><button class="icon-button menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation"><svg class="icon"><use href="#menu-2"/></svg></button></div>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#home">Home</a><a href="#consultations">Consultations</a><a href="#about">About Vélune</a><a href="#visit">Visit & FAQ</a><a href="#booking">Book a consultation</a></nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <picture><source media="(max-width:760px)" srcset="assets/conversation-room.webp"><img class="hero-image" src="assets/atelier-salon.webp" alt="Illustrative sunlit atelier with deep teal chairs" width="1672" height="941" fetchpriority="high"></picture>
+      <div class="hero-wash" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">A FICTIONAL AESTHETIC ATELIER</p>
+          <h1 id="hero-title">Your beauty,<br><em>your own rhythm.</em></h1>
+          <p class="hero-description">Bring your questions about skin, appearance and change. Begin with a conversation, at your own pace.</p>
+          <div class="hero-buttons"><a class="button primary" href="#booking">Book a consultation <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></a><a class="button secondary" href="#consultations">Explore consultations</a></div>
+        </div>
+      </div>
+      <svg class="brand-ribbon" viewBox="0 0 1440 130" preserveAspectRatio="none" aria-hidden="true"><path d="M580 125C850 25 1120 10 1435 55" fill="none" stroke="#c27a58" stroke-opacity=".45" stroke-width="1.2"/><path d="M695 130C980 50 1250 52 1440 88" fill="none" stroke="#17665f" stroke-opacity=".22" stroke-width="1"/></svg>
+      <div class="hero-utilities"><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false"><span class="motion-status" aria-hidden="true"></span><span>Pause motion</span></button><span class="image-disclosure">Illustrative concept interior</span></div>
+    </section>
+
+    <section class="consultations section silk-surface" id="consultations" aria-labelledby="consultations-title">
+      <div class="container">
+        <div class="section-heading"><h2 id="consultations-title">A starting point, <em>just for you.</em></h2><p>Three ways to begin. Choose the questions you want to make space for.</p></div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-photo panel-photo panel-one"><img src="assets/portraits.webp" alt="Illustrative beauty portrait of a woman gently resting her fingertips on her cheek" width="2172" height="724" loading="lazy"><span class="consultation-index" aria-hidden="true" data-no-translate>01</span></div><div class="service-body"><span class="service-category">Skin & everyday care</span><h3>Skin consultation</h3><p>Talk through your everyday routine, how your skin feels and the habits you want to understand.</p><p class="service-format">30-minute concept session</p><button class="button secondary full" data-service-detail="skin">Explore this consultation <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button></div></article>
+          <article class="service-card"><div class="service-photo panel-photo panel-two"><img src="assets/portraits.webp" alt="Illustrative three-quarter beauty portrait" width="2172" height="724" loading="lazy"><span class="consultation-index" aria-hidden="true" data-no-translate>02</span></div><div class="service-body"><span class="service-category">Balance & individuality</span><h3>Facial aesthetics</h3><p>Look at the features you value, the references you like and what feels true to your own appearance.</p><p class="service-format">30-minute concept session</p><button class="button secondary full" data-service-detail="facial">Explore this consultation <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button></div></article>
+          <article class="service-card"><div class="service-photo panel-photo panel-three"><img src="assets/portraits.webp" alt="Illustrative side-profile beauty portrait" width="2172" height="724" loading="lazy"><span class="consultation-index" aria-hidden="true" data-no-translate>03</span></div><div class="service-body"><span class="service-category">Confidence at every stage</span><h3>Ageing well</h3><p>Discuss the changes you have noticed, what matters to you now and the questions you want to ask.</p><p class="service-format">30-minute concept session</p><button class="button secondary full" data-service-detail="ageing">Explore this consultation <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button></div></article>
+        </div>
+        <div class="service-bottom"><span class="small-note">Illustrative consultation categories and portraits.</span><button class="text-button" id="open-interest">Not sure where to start? <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></button></div>
+      </div>
+    </section>
+
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid"><div class="about-copy"><h2 id="about-title">A more personal<br>kind of <em>consultation.</em></h2><p class="gold-lead">Your questions set the direction.</p><p>There is no single way to feel like yourself. A first conversation can begin with your routine, a photo you connect with, or a change you are still finding words for.</p><p>Vélune imagines a place for that pause: two chairs, softened daylight and time to put your thoughts in order. You choose what to explore, and what can wait.</p><a class="text-button" href="#visit">Discover the experience <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></a></div><div class="space-gallery"><figure class="gallery-main"><button type="button" class="space-view" data-space="conversation" aria-label="View the conversation room"><img src="assets/conversation-room.webp" alt="Illustrative private conversation room with teal chairs and filtered daylight" width="1448" height="1086" loading="lazy"><span class="space-view-hint" aria-hidden="true">+</span></button></figure><figure class="gallery-detail"><button type="button" class="space-view" data-space="reception" aria-label="View the arrival salon"><img src="assets/atelier-salon.webp" alt="Illustrative sunlit salon with a curved plaster wall and deep teal chairs" width="1672" height="941" loading="lazy"><span class="space-view-hint" aria-hidden="true">+</span></button></figure><span class="gallery-caption">A glimpse of the envisioned experience · Concept imagery</span></div></div>
+        <div class="team-heading"><h3>Care, before anything else.</h3><span class="small-note">The principles behind this concept</span></div>
+        <div class="team-grid">
+          <article class="team-role"><span class="principle-icon" aria-hidden="true"><svg class="icon"><use href="#heart-handshake"/></svg></span><div><h4>Listen before suggesting</h4><p>Begin with the questions you bring, rather than an expectation of how you should look.</p></div></article>
+          <article class="team-role"><span class="principle-icon" aria-hidden="true"><svg class="icon"><use href="#sparkles"/></svg></span><div><h4>Keep the conversation clear</h4><p>Make room for plain explanations, thoughtful questions and a pace that feels comfortable.</p></div></article>
+          <article class="team-role"><span class="principle-icon" aria-hidden="true"><svg class="icon"><use href="#user"/></svg></span><div><h4>Leave room to choose</h4><p>A first conversation is a starting point. You decide what, if anything, comes next.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit section silk-surface" id="visit" aria-labelledby="visit-title"><div class="container"><div class="section-heading"><h2 id="visit-title">Your visit, <em>made clearer.</em></h2><p>A little preparation for a more comfortable first conversation.</p></div><div class="visit-grid"><div class="visit-card journey-card"><h3>From curiosity to clarity.</h3><p class="journey-intro">A first conversation, thoughtfully imagined.</p><div class="visit-information">
+          <div><span class="journey-number" aria-hidden="true">01</span><div><h4>Share what matters</h4><p>Choose a consultation direction, or let the interest guide help you find a starting point.</p></div></div>
+          <div><span class="journey-number" aria-hidden="true">02</span><div><h4>Choose your moment</h4><p>Explore illustrative dates and times, then choose your preferred conversation language.</p></div></div>
+          <div><span class="journey-number" aria-hidden="true">03</span><div><h4>Take a clear next step</h4><p>Review your request and download a demo itinerary. No appointment is made.</p></div></div>
+          </div><a class="text-button" href="#booking">Try the booking demo <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></a><p class="small-note">An imagined atelier. An entirely fictional setting.</p></div><div class="faq"><h3>Before your first visit</h3><details open><summary>Does a booking request confirm my appointment?<svg class="icon" aria-hidden="true"><use href="#chevron-down"/></svg></summary><p>A request is a preferred time, rather than a confirmed appointment. In this demo, no request is sent to the clinic. A real appointment would require a separate confirmation.</p></details><details><summary>Can I book if I’m unsure what to choose?<svg class="icon" aria-hidden="true"><use href="#chevron-down"/></svg></summary><p>Of course. Choose “Help me find a starting point” in the booking form, or try our short interest guide. It simply helps organise your questions.</p></details><details><summary>Are the services and availability real?<svg class="icon" aria-hidden="true"><use href="#chevron-down"/></svg></summary><p>Vélune is an independent fictional brand. The consultation categories, spaces, portraits and times are illustrative, with no real clinic or appointment availability.</p></details><details><summary>What should I share in this demo?<svg class="icon" aria-hidden="true"><use href="#chevron-down"/></svg></summary><p>Please use the sample details provided. Keep medical information, photographs, identity documents and real contact details out of this demonstration.</p></details><details><summary>Can I choose a language for my consultation?<svg class="icon" aria-hidden="true"><use href="#chevron-down"/></svg></summary><p>Try an English or Mandarin preference. This fictional brand has no real reception team or language service.</p></details></div></div></div></section>
+
+    <section class="booking section" id="booking" aria-labelledby="booking-title"><div class="container"><div class="section-heading"><h2 id="booking-title">Let’s begin <em>with a conversation.</em></h2><p>Choose a direction and a time that suits you. Try the complete booking experience.</p></div>
+      <div class="booking-layout"><div class="booking-panel"><div class="booking-topline"><span><svg class="icon" aria-hidden="true"><use href="#calendar-event"/></svg> Your consultation request</span><span class="demo-label">Interactive demo</span></div>
+        <ol class="stepper" aria-label="Booking steps"><li class="active" aria-current="step"><span>1</span><div>Your interests</div></li><li><span>2</span><div>Preferred time</div></li><li><span>3</span><div>Your details</div></li></ol>
+        <form id="booking-form" novalidate>
+          <section class="booking-step" data-step="0" aria-labelledby="step-0-title"><h3 id="step-0-title" tabindex="-1">What would you like to explore?</h3><p class="step-description">A starting point is all you need. You can always change your selection.</p><fieldset class="interest-choices"><legend class="sr-only">Consultation interest</legend><label class="interest-option"><input type="radio" name="interest" value="skin"><span class="option-icon"><svg class="icon" aria-hidden="true"><use href="#sparkles"/></svg></span><span><strong>Skin consultation</strong><small>Skin, routine and everyday care</small></span><span class="radio-indicator"></span></label><label class="interest-option"><input type="radio" name="interest" value="facial"><span class="option-icon"><svg class="icon" aria-hidden="true"><use href="#user"/></svg></span><span><strong>Facial aesthetics</strong><small>Balance, preferences and individuality</small></span><span class="radio-indicator"></span></label><label class="interest-option"><input type="radio" name="interest" value="ageing"><span class="option-icon"><svg class="icon" aria-hidden="true"><use href="#heart-handshake"/></svg></span><span><strong>Ageing well</strong><small>Changing skin and personal goals</small></span><span class="radio-indicator"></span></label><label class="interest-option"><input type="radio" name="interest" value="unsure"><span class="option-icon"><svg class="icon" aria-hidden="true"><use href="#world"/></svg></span><span><strong>Help me find a starting point</strong><small>I’d like to ask a few questions first</small></span><span class="radio-indicator"></span></label></fieldset><p class="field-error" id="interest-error" role="alert"></p></section>
+          <section class="booking-step" data-step="1" aria-labelledby="step-1-title" hidden><h3 id="step-1-title" tabindex="-1">A time to make it personal.</h3><p class="step-description">Demo timezone: UTC+7. All times and availability are fictional.</p><div class="date-shortcuts"><div class="date-shortcuts-head"><span>Find a moment</span><div><button type="button" class="icon-button" id="dates-prev" aria-label="Previous dates"><svg class="icon" aria-hidden="true"><use href="#chevron-left"/></svg></button><button type="button" class="icon-button" id="dates-next" aria-label="Next dates"><svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button></div></div><div id="quick-dates" class="quick-dates" role="group" aria-label="Suggested demonstration dates"></div></div><div class="field"><label for="appointment-date">Preferred date <span aria-hidden="true">*</span></label><input id="appointment-date" name="date" type="date" aria-describedby="date-error" required><p class="field-error" id="date-error" role="alert"></p></div><fieldset class="time-choices"><legend>Preferred time <span aria-hidden="true">*</span></legend><p class="availability-message" id="time-availability" role="status" hidden></p><div class="time-grid"><label><input type="radio" name="time" value="10:30"><span>10:30 AM</span></label><label><input type="radio" name="time" value="11:30"><span>11:30 AM</span></label><label><input type="radio" name="time" value="14:00"><span>2:00 PM</span></label><label><input type="radio" name="time" value="15:00"><span>3:00 PM</span></label><label><input type="radio" name="time" value="16:00"><span>4:00 PM</span></label><label><input type="radio" name="time" value="17:00"><span>5:00 PM</span></label></div><p class="field-error" id="time-error" role="alert"></p></fieldset><p class="time-note"><svg class="icon" aria-hidden="true"><use href="#info-circle"/></svg> Choosing a time expresses a preference. It does not reserve an appointment.</p></section>
+          <section class="booking-step" data-step="2" aria-labelledby="step-2-title" hidden><div class="details-title"><h3 id="step-2-title" tabindex="-1">A few details to finish.</h3><button class="text-button" type="button" id="fill-demo">Use demo details <svg class="icon" aria-hidden="true"><use href="#sparkles"/></svg></button></div><p class="step-description">Please use fictional details for this demonstration.</p><div class="fields-grid"><div class="field"><label for="guest-name">Your name <span aria-hidden="true">*</span></label><input id="guest-name" name="name" type="text" placeholder="e.g. Alex Morgan" maxlength="80" autocomplete="off" aria-describedby="name-error" required><p class="field-error" id="name-error" role="alert"></p></div><div class="field"><label for="guest-language">Preferred language <span aria-hidden="true">*</span></label><select id="guest-language" name="language"><option value="English">English</option><option value="Mandarin">Mandarin</option></select></div><div class="field field-wide"><label for="guest-email">Email address <span aria-hidden="true">*</span></label><input id="guest-email" name="email" type="email" placeholder="e.g. guest@example.com" maxlength="150" autocomplete="off" aria-describedby="email-error" required><p class="field-error" id="email-error" role="alert"></p></div><div class="field field-wide"><label for="guest-note">Anything you’d like to ask? <span class="optional">Optional</span></label><textarea id="guest-note" name="note" rows="3" maxlength="500" placeholder="Use fictional preferences only. Please don’t include medical or personal information."></textarea><span class="character-count"><span id="note-count">0</span>/500</span></div></div><details class="request-review" open><summary>Review your request</summary><div id="request-review-content"></div><button type="button" class="text-button" id="review-edit-time">Change direction or time</button></details><label class="demo-consent"><input id="demo-consent" name="consent" type="checkbox"><span>I understand this is a demonstration. My request will not be sent to the clinic.</span></label><p class="field-error" id="consent-error" role="alert"></p></section>
+          <div class="booking-controls"><button class="text-button back-button" id="booking-back" type="button" hidden><svg class="icon" aria-hidden="true"><use href="#chevron-left"/></svg> Back</button><button class="button primary next-button" id="booking-next" type="button">Continue <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button><button class="button primary next-button" id="booking-submit" type="submit" hidden>Submit demo request <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button></div>
+          <p class="form-footnote"><svg class="icon" aria-hidden="true"><use href="#shield-check"/></svg> No request is sent. Your details are not saved.</p>
+        </form>
+        <section id="booking-success" class="booking-success" aria-labelledby="success-title" hidden><div class="success-icon"><svg class="icon" aria-hidden="true"><use href="#check"/></svg></div><p class="success-eyebrow">DEMO REQUEST COMPLETE</p><h3 id="success-title" tabindex="-1">Your next step,<br><em>beautifully considered.</em></h3><p>You’ve completed the booking experience.<br>This demonstration has not contacted the clinic.</p><div class="success-reference"><span>Demo reference</span><strong id="success-reference"></strong><span class="pending-status">Pending confirmation</span></div><div class="success-summary" id="success-summary"></div><div class="success-actions"><button class="button primary" id="download-itinerary" type="button">Download demo itinerary<svg class="icon" aria-hidden="true"><use href="#calendar-event"/></svg></button><button class="button secondary" id="start-again">Try another booking <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button><button class="text-button" id="edit-request">Edit these details</button></div><p class="action-feedback" id="calendar-feedback" role="status" hidden></p><p class="small-note calendar-disclosure">The calendar file contains the demo time and topic only. No contact details.</p></section>
+      </div><aside class="booking-aside"><div class="aside-photo"><img src="assets/conversation-room.webp" alt="Illustrative private conversation room with teal chairs and filtered daylight" width="1448" height="1086" loading="lazy"></div><div class="aside-content"><h3>A little more clarity.<br><em>A little more you.</em></h3><p>Your consultation begins with your own questions, preferences and pace.</p><dl class="booking-summary"><div><dt>Consultation</dt><dd id="summary-interest">Your choice, your starting point</dd></div><div><dt>Preferred visit</dt><dd id="summary-time">Choose a date and time</dd></div><div><dt>Location</dt><dd>The Vélune Atelier · Fictional</dd></div></dl><p class="aside-note">Vélune is a fictional brand. This portfolio demo does not represent an operating clinic.</p></div></aside></div>
+    </div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="footer-top"><a href="#home" class="brand" aria-label="Vélune home"><span class="brand-symbol" aria-hidden="true"></span><span class="brand-word">Vélune<span>AESTHETIC ATELIER</span></span></a><nav aria-label="Footer navigation"><a href="#consultations">Consultations</a><a href="#about">About Vélune</a><a href="#visit">Visit & FAQ</a><a href="#booking">Book a consultation</a></nav><span class="footer-location"><svg class="icon" aria-hidden="true"><use href="#map-pin"/></svg> The Vélune Atelier · Fictional</span></div><div class="footer-links"><button class="text-button" type="button" data-open-concept>About this concept</button><a class="text-button" href="#home">Back to the beginning<svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a></div><div class="footer-bottom"><p>Independent portfolio concept. Vélune is fictional; all services, people, locations and availability are illustrative.</p><p>Beauty, in your own rhythm. <span>© <span id="footer-year">2026</span> Vélune</span></p></div></div></footer>
+
+  <dialog id="service-dialog" class="site-dialog" aria-labelledby="service-dialog-title"><button class="icon-button dialog-close" aria-label="Close consultation details"><svg class="icon"><use href="#x"/></svg></button><div id="service-dialog-photo" class="dialog-photo panel-photo"><img src="assets/portraits.webp" alt="Illustrative beauty portrait" width="2172" height="724"></div><div class="dialog-content"><span class="service-category">A personal starting point</span><h2 id="service-dialog-title"></h2><p id="service-dialog-description"></p><h3>What you can explore</h3><ul id="service-dialog-topics"></ul><div class="consultation-outcome"><h3>What you can take away</h3><p id="service-dialog-outcome"></p></div><div class="consultation-format"><h3>A conversation, never a commitment.</h3><p>A short introduction, your questions and space to reflect. All timings are illustrative.</p><span class="small-note">Fictional demonstration format</span></div><p class="small-note">Illustrative consultation only. This page does not offer a diagnosis or recommend a treatment.</p><button class="button primary full" id="service-dialog-book">Choose this consultation <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button></div></dialog>
+  <dialog id="interest-dialog" class="site-dialog interest-dialog" aria-labelledby="interest-dialog-title"><button class="icon-button dialog-close" aria-label="Close interest guide"><svg class="icon"><use href="#x"/></svg></button><div class="dialog-content"><span class="guide-icon"><svg class="icon" aria-hidden="true"><use href="#sparkles"/></svg></span><h2 id="interest-dialog-title">Find your<br><em>starting point.</em></h2><p>What would you most like to talk about?</p><div class="guide-options"><button data-guide="skin">My skin and everyday routine <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button><button data-guide="facial">Facial balance and my preferences <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button><button data-guide="ageing">Changing skin as I get older <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button><button data-guide="unsure">I’d simply like to ask questions <svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button></div><p class="small-note">This guide organises your interests. It does not assess your skin or recommend treatments.</p></div></dialog>
+
+  <dialog id="space-dialog" class="site-dialog space-dialog" aria-labelledby="space-title"><button type="button" class="icon-button dialog-close" aria-label="Close space gallery"><svg class="icon" aria-hidden="true"><use href="#x"/></svg></button><figure><img id="space-image" src="assets/conversation-room.webp" alt="Illustrative private conversation room with teal chairs and filtered daylight" width="1448" height="1086"><figcaption><div><h2 id="space-title">Room for a conversation</h2><p id="space-caption">Generated concept imagery. An imagined space, not a real location.</p></div><div class="space-controls"><button type="button" class="icon-button" id="space-prev" aria-label="Previous space"><svg class="icon" aria-hidden="true"><use href="#chevron-left"/></svg></button><button type="button" class="icon-button" id="space-next" aria-label="Next space"><svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button></div></figcaption></figure></dialog>
+  <dialog id="concept-dialog" class="site-dialog concept-dialog" aria-labelledby="concept-title"><button type="button" class="icon-button dialog-close" aria-label="Close concept information"><svg class="icon" aria-hidden="true"><use href="#x"/></svg></button><div class="dialog-content"><span class="concept-wordmark" aria-hidden="true" data-no-translate>Vélune</span><h2 id="concept-title">An independent brand concept.</h2><p>Vélune is a fictional aesthetic atelier created for a personal portfolio. It brings together a bilingual brand experience, considered motion and a complete booking interaction.</p><h3>What you can experience</h3><p>Explore consultation directions, view the imagined spaces and try a three-step request with sample details. Switch languages at any point without losing your choices.</p><h3>Your demo, your privacy</h3><p>No request is sent and no contact information is stored. Refreshing clears your entries. The optional calendar download contains the fictional topic and time only.</p><p class="small-note">All services, locations, portraits and availability are illustrative. This concept offers no diagnosis, treatment recommendation or medical credentials.</p></div></dialog>
+  <div class="sr-only" id="live-announcement" aria-live="polite"></div>
+</body>
+</html>
